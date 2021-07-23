@@ -23,6 +23,8 @@ namespace CRUDManager
         public MainWindow()
         {
             InitializeComponent();
+            initDevice();
+            InitUserControl();
         }
     }
 }

@@ -9,8 +9,80 @@
     <Grid>
         <TabControl Margin="10" TabStripPlacement="Left" HorizontalContentAlignment="Left">
             <TabItem Header="재고 관리" Width="80" Height="50">
+
                 <StackPanel Orientation="Vertical">
-                    <GroupBox Header="USB Open" Height="100" Margin="10" VerticalAlignment="Top" >
+
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem Header="인원 관리" Width="80" Height="50">
+
+                <StackPanel Orientation="Vertical">
+                    <GroupBox Header="User Data" Height="100" Margin="10" VerticalAlignment="Top" >
+                        <Grid ShowGridLines="True" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                                x:Name="labelUserName"
+                                Grid.Column="0" Margin="10,10,10,10"
+                                Text="User Name" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBox 
+                                x:Name="editUserName"
+                                Grid.Column="1" Margin="10,10,10,10"
+                                VerticalContentAlignment="Center" TextAlignment="Center" />
+                            <ComboBox
+                                x:Name="comboxWorkerGroup"
+                                Grid.Column="2" Margin="20,20,20,20" 
+                                IsSynchronizedWithCurrentItem="False" >
+                               
+                            </ComboBox>
+
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Header="Read Tag" Height="100" Margin="10" VerticalAlignment="Top" >
+                        <Grid ShowGridLines="True" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                                x:Name="labFtdiConnectState"
+                                Grid.Column="0" Margin="10,10,10,10"
+                                Text="Disconnected" VerticalAlignment="Center" TextAlignment="Center" />
+                            <TextBox 
+                                x:Name="editMifareUid"
+                                Grid.Column="1" Margin="10,10,10,10"
+                                VerticalContentAlignment="Center" TextAlignment="Center" />
+                            <Button
+                                x:Name="cmdMifareUid"
+                                Click="cmdMifareUid_Click"
+                                Grid.Column="2" Margin="10,10,10,10" 
+                                Content="Read Tag"/>
+                            <Button
+                                x:Name="userTagCheck"
+                                Click="userTagCheck_Click"
+                                Grid.Column="3" Margin="10,10,10,10" 
+                                Content="User Confirm"/>
+                        </Grid>
+                    </GroupBox>
+
+
+                    <GroupBox Visibility="Hidden"
+                        Header="USB Manual Method" Height="100" Margin="10" VerticalAlignment="Top" >
                         <Grid ShowGridLines="True" Margin="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
@@ -41,42 +113,18 @@
                                 Click="cmdFtdiUsbClose_Click"
                                 Grid.Column="3" Margin="10,10,10,10" 
                                 Content="USB Close"/>
-                            <TextBlock 
-                                x:Name="labFtdiConnectState"
-                                Grid.Column="4" Margin="10,10,10,10"
-                                Text="Disconnected" VerticalAlignment="Center" TextAlignment="Center" />
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Read Tag" Height="100" Margin="10" VerticalAlignment="Top" >
-                        <Grid ShowGridLines="True" Margin="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox 
-                                x:Name="editMifareUid"
-                                Grid.Column="0" Margin="10,10,10,10"
-                                VerticalContentAlignment="Center" TextAlignment="Center" />
-                            <Button
-                                x:Name="cmdMifareUid"
-                                Click="cmdMifareUid_Click"
-                                Grid.Column="1" Margin="10,10,10,10" 
-                                Content="Read Tag"/>
-                        </Grid>
-                    </GroupBox>
+                </StackPanel>
+
+            </TabItem>
+
+            <TabItem Header="작업 관리" Width="80" Height="50">
+
+                <StackPanel Orientation="Vertical">
 
                 </StackPanel>
-            </TabItem>
-            <TabItem Header="인원 관리" Width="80" Height="50">
-                <Grid Background="#FFE5E5E5"/>
-            </TabItem>
-            <TabItem Header="작업 관리" Width="80" Height="50">
-                <Grid Background="#FFE5E5E5"/>
+
             </TabItem>
         </TabControl>
 
